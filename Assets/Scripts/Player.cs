@@ -4,8 +4,8 @@ using System.Collections;
 public class Player : MonoBehaviour {
 
 	private float amountToMove = 0.25f;
-	private float surfaceLimitRight = 2.35f;
-	private float surfaceLimitLeft = -2.35f;
+	private float surfaceLimitRight = 3.5f;
+	private float surfaceLimitLeft = -3.5f;
 
 	void Start ()
 	{
@@ -41,7 +41,7 @@ public class Player : MonoBehaviour {
 	{
 		if (other.gameObject.tag == "Obstacle") {
 			Die ();
-		} else if(other.gameObject.tag == "Light") {
+		} else if(other.gameObject.tag == "Point") {
 			Destroy (other.gameObject);
 			// Punten verdienen
 		}

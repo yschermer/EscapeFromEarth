@@ -3,8 +3,8 @@ using System.Collections;
 
 public class Point : MonoBehaviour {
 
-	private float rangeLeft = -2.35f;
-	private float rangeRight = 2.35f;
+	private float rangeLeft = -3.5f;
+	private float rangeRight = 3.5f;
 
 	// Use this for initialization
 	void Start () {
@@ -15,6 +15,12 @@ public class Point : MonoBehaviour {
 	void Update () {
 		if (this.gameObject.transform.position.y < -3) {
 			DestroyObject (this.gameObject);
+		}
+	}
+
+	void OnCollisionEnter2D(Collision2D other){
+		if (other.gameObject.tag == "Obstacle") {
+			this.gameObject.transform.rotation = new Vector2 (0, 0);
 		}
 	}
 }

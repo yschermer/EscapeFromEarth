@@ -4,14 +4,15 @@ using System.Collections;
 public class Generate : MonoBehaviour {
 
 	public GameObject obstacle;
-	public GameObject light;
+	public GameObject point;
 	int distance;
 
 	// Use this for initialization
 	void Start () {
 		distance = 0;
 
-		InvokeRepeating ("CreateObstacle", 1f, 1.5f);
+		InvokeRepeating ("CreateObstacle", 0.1f, Random.Range(0.5f, 1f));
+		InvokeRepeating ("CreatePoint", 0.1f, Random.Range(0.5f, 1f));
 	}
 	
 	// Update is called once per frame
@@ -21,7 +22,7 @@ public class Generate : MonoBehaviour {
 		
 	void OnGUI()
 	{
-		GUI.color = Color.black;
+		GUI.color = Color.white;
 		GUILayout.Label ("Distance: " + distance.ToString());
 	}
 
@@ -29,6 +30,9 @@ public class Generate : MonoBehaviour {
 	{
 		distance++;
 		Instantiate (obstacle);
-		Instantiate (light);
+	}
+
+	void CreatePoint(){
+		Instantiate (point);
 	}
 }
