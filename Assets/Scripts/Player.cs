@@ -4,8 +4,8 @@ using System.Collections;
 public class Player : MonoBehaviour {
 
 	private float amountToMove = 0.25f;
-	private float surfaceLimitRight = 3.45f;
-	private float surfaceLimitLeft = -3.45f;
+	private float surfaceLimitRight = 2.35f;
+	private float surfaceLimitLeft = -2.35f;
 
 	void Start ()
 	{

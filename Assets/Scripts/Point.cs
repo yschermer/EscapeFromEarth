@@ -3,8 +3,8 @@ using System.Collections;
 
 public class Point : MonoBehaviour {
 
-	private float rangeLeft = -3.45f;
-	private float rangeRight = 3.45f;
+	private float rangeLeft = -2.35f;
+	private float rangeRight = 2.35f;
 
 	// Use this for initialization
 	void Start () {
