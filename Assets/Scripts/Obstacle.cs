@@ -22,7 +22,7 @@ public class Obstacle : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D other){
 		if (other.gameObject.tag == "Point") {
-			this.gameObject.transform.rotation = new Vector2 (0, 0);
+			this.gameObject.transform.rotation = Quaternion.Euler (0, 0, 0);
 		}
 	}
 }
