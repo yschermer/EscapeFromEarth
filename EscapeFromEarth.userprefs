@@ -1,11 +1,12 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Obstacle.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Gif.cs">
     <Files>
+      <File FileName="Assets\Scripts\Obstacle.cs" Line="25" Column="4" />
       <File FileName="Assets\Scripts\Player.cs" Line="44" Column="43" />
-      <File FileName="Assets\Scripts\Obstacle.cs" Line="25" Column="1" />
-      <File FileName="Assets\Scripts\Point.cs" Line="22" Column="40" />
+      <File FileName="Assets\Scripts\Point.cs" Line="8" Column="2" />
       <File FileName="Assets\Scripts\Generate.cs" Line="31" Column="14" />
+      <File FileName="Assets\Scripts\Gif.cs" Line="5" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour {
 
-	private float amountToMove = 0.25f;
-	private float surfaceLimitRight = 3.5f;
-	private float surfaceLimitLeft = -3.5f;
+	private float cameraLimitRight = 3.5f;
+	private float cameraLimitLeft = -3.5f;
 
 	void Start ()
 	{
@@ -19,19 +19,21 @@ public class Player : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
-		// Jump
-		if (Input.GetKey ("left")) 
+        float distance = 0.15f;
+
+        // Jump
+        if (Input.GetKey ("left")) 
 		{
-			if (this.gameObject.transform.position.x > surfaceLimitLeft) 
+			if (this.gameObject.transform.position.x > cameraLimitLeft) 
 			{
-				this.gameObject.transform.position = new Vector2 ((this.gameObject.transform.position.x - amountToMove), this.gameObject.transform.position.y);
+				this.gameObject.transform.position = new Vector2 ((this.gameObject.transform.position.x - distance), this.gameObject.transform.position.y);
 			}
 		} 
 		else if (Input.GetKey ("right")) 
 		{
-			if (this.gameObject.transform.position.x < surfaceLimitRight) 
+			if (this.gameObject.transform.position.x < cameraLimitRight) 
 			{
-				this.gameObject.transform.position = new Vector2 ((this.gameObject.transform.position.x + amountToMove), this.gameObject.transform.position.y);
+				this.gameObject.transform.position = new Vector2 ((this.gameObject.transform.position.x + distance), this.gameObject.transform.position.y);
 			}
 		}
 	}
@@ -41,13 +43,13 @@ public class Player : MonoBehaviour {
 	{
 		if (other.gameObject.tag == "Obstacle") {
 			Die ();
-		} else if(other.gameObject.tag == "Point") {
+		} else if(other.gameObject.tag == "Sunlight") {
 			Destroy (other.gameObject);
 			// Punten verdienen
 		}
 	}
 
 	void Die(){
-		Application.LoadLevel ("Play");
+        SceneManager.LoadScene("Play");
 	}
 }

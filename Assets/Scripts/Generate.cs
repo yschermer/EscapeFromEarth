@@ -3,17 +3,19 @@ using System.Collections;
 
 public class Generate : MonoBehaviour {
 
-	public GameObject obstacle;
-	public GameObject point;
+	public GameObject asteroid;
+	public GameObject sunlight;
+    public GameObject meteor;
 	int distance;
 
 	// Use this for initialization
 	void Start () {
 		distance = 0;
 
-		InvokeRepeating ("CreateObstacle", 0.1f, Random.Range(0.5f, 1f));
-		InvokeRepeating ("CreatePoint", 0.1f, Random.Range(0.5f, 1f));
-	}
+		InvokeRepeating ("CreateAsteroid", 0.1f, Random.Range(0.5f, 1f));
+		InvokeRepeating ("CreateSunlight", 0.1f, Random.Range(0.5f, 1f));
+        InvokeRepeating("CreateMeteor", 5f, 5f);
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -26,13 +28,18 @@ public class Generate : MonoBehaviour {
 		GUILayout.Label ("Distance: " + distance.ToString());
 	}
 
-	void CreateObstacle()
+	void CreateAsteroid()
 	{
 		distance++;
-		Instantiate (obstacle);
+		Instantiate (asteroid);
 	}
 
-	void CreatePoint(){
-		Instantiate (point);
+	void CreateSunlight(){
+		Instantiate (sunlight);
 	}
+
+    void CreateMeteor()
+    {
+        Instantiate(meteor);
+    }
 }
