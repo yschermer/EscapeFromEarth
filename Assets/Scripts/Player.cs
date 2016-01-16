@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.SceneManagement;
+
 
 public class Player : MonoBehaviour {
 
@@ -50,6 +50,6 @@ public class Player : MonoBehaviour {
 	}
 
 	void Die(){
-        SceneManager.LoadScene("Play");
-	}
+        Application.LoadLevel("Play");
+    }
 }
