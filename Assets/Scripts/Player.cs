@@ -6,8 +6,6 @@ using System.Linq;
 
 public class Player : MonoBehaviour
 {
-
-
     private float cameraLimitRight = 3.5f;
     private float cameraLimitLeft = -3.5f;
 
@@ -18,7 +16,8 @@ public class Player : MonoBehaviour
     {
         Left,
         Right
-    };
+    }
+
     void Start()
     {
         if (Application.platform == RuntimePlatform.Android)
