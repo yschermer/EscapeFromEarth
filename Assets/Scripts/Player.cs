@@ -4,8 +4,8 @@ using System.Collections;
 
 public class Player : MonoBehaviour {
 
-	private float cameraLimitRight = 3.5f;
-	private float cameraLimitLeft = -3.5f;
+	private float cameraLimitRight = 1.5f;
+	private float cameraLimitLeft = -1.5f;
 
 	void Start ()
 	{
