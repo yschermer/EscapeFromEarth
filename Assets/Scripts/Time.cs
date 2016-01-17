@@ -19,6 +19,6 @@ public class Time : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        textComponent.text = string.Format("Time: {0} seconds", timer.Elapsed.Seconds);
+        textComponent.text = string.Format("{0} m {1} s", timer.Elapsed.Minutes, timer.Elapsed.Seconds);
     }
 }

@@ -18,7 +18,7 @@ public class Distance : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        textComponent.text = string.Format("Distance: {0} km", distance);
+        textComponent.text = string.Format("{0} km", distance);
 	}
 
     void IncreaseDistanceTravelled()

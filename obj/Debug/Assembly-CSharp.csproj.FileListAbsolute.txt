@@ -20,3 +20,7 @@ C:\Users\Raymond\Documents\GitHub\EscapeFromEarth\Temp\bin\Debug\UnityEngine.UI.
 C:\Users\Raymond\Documents\GitHub\EscapeFromEarth\Temp\bin\Debug\UnityEngine.Networking.xml
 C:\Users\Raymond\Documents\GitHub\EscapeFromEarth\obj\Debug\Assembly-CSharp.dll
 C:\Users\Raymond\Documents\GitHub\EscapeFromEarth\obj\Debug\Assembly-CSharp.pdb
+C:\Users\Raymond\Documents\GitHub\EscapeFromEarth\Temp\bin\Debug\UnityEngine.Advertisements.dll
+C:\Users\Raymond\Documents\GitHub\EscapeFromEarth\Temp\bin\Debug\UnityEngine.Analytics.dll
+C:\Users\Raymond\Documents\GitHub\EscapeFromEarth\Temp\bin\Debug\UnityEngine.Advertisements.xml
+C:\Users\Raymond\Documents\GitHub\EscapeFromEarth\Temp\bin\Debug\UnityEngine.Analytics.xml
