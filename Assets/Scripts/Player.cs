@@ -154,11 +154,6 @@ public class Player : MonoBehaviour
         {
             Die();
         }
-        else if (other.gameObject.tag == "Sunlight")
-        {
-            Destroy(other.gameObject);
-            // Punten verdienen
-        }
     }
 
     void Die()
