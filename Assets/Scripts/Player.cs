@@ -85,6 +85,7 @@ public class Player : TouchSprite
 
     void OnFirstTouch()
     {
+        //
         Vector3 pos;
         if(Time.timeScale == 1)
         {
