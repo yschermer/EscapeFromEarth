@@ -11,7 +11,7 @@ public class Score : MonoBehaviour {
 
     Stopwatch timer;
     int distance;
-    bool gamePause;
+    public bool gamePause;
 
 	// Use this for initialization
 	void Start () {

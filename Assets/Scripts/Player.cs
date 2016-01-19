@@ -4,13 +4,14 @@ using System.Collections.Generic;
 using System.Linq;
 
 
+
 public class Player : TouchSprite
 {
     private float cameraLimitRight = 3.5f;
     private float cameraLimitLeft = -3.5f;
     private bool flag = false;
     public float speed = 0.02f;
-
+    public bool pauseMode = false;
     float distance = 0.15f;
 
     void Start()
@@ -61,9 +62,25 @@ public class Player : TouchSprite
                 this.gameObject.transform.position = new Vector2((this.gameObject.transform.position.x + distance), this.gameObject.transform.position.y);
             }
         }
+
+        //Touch
         TouchInput(GetComponent<BoxCollider2D>());
 
-
+        //Back button on phones function
+#if UNITY_ANDROID
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if(pauseMode == true)
+            {
+                Application.Quit();
+            }
+            else
+            {
+                
+            }
+            
+        }
+#endif
     }
 
     void OnFirstTouch()
