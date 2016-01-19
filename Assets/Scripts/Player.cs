@@ -16,7 +16,7 @@ public class Player : TouchSprite
 
     void Start()
     {
-
+        //
 #if UNITY_ANDROID
 
         cameraLimitRight = 1.4f;

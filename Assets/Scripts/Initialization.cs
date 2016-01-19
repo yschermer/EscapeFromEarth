@@ -13,19 +13,12 @@ public class Initialization : MonoBehaviour {
 
             foreach (Text text in texts)
             {
-                text.transform.localScale = new Vector2(
-                    text.transform.localScale.x + 1,
-                    text.transform.localScale.y + 1);
-
-                text.verticalOverflow = VerticalWrapMode.Overflow;
-                text.horizontalOverflow = HorizontalWrapMode.Overflow;
+          
             }
 
             foreach (Button button in buttons)
             {
-                button.transform.localScale = new Vector2(
-                    button.transform.localScale.x + 1,
-                    button.transform.localScale.y + 1);
+                
             }
         }
 	}
