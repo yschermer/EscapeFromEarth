@@ -13,19 +13,17 @@ public class Player : TouchSprite
     public float speed = 0.02f;
     public bool pauseMode = false;
     float distance = 0.15f;
+    int count = 0;
+    GUISkin skin;
 
     void Start()
     {
-        //
 #if UNITY_ANDROID
-
         cameraLimitRight = 1.4f;
         cameraLimitLeft = -1.4f;
 #elif UNITY_IPHONE
-        
         cameraLimitRight = 1.4f;
         cameraLimitLeft = -1.4f;
-
 #endif
 
         // gameObject
@@ -70,24 +68,48 @@ public class Player : TouchSprite
 #if UNITY_ANDROID
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if(pauseMode == true)
-            {
-                Application.Quit();
-            }
-            else
-            {
-                
-            }
-            
+            Time.timeScale = 0;
+            count = 1;
         }
 #endif
     }
 
+#if UNITY_ANDROID
+    void OnApplicationPause()
+    {
+        Time.timeScale = 0;
+        count = 1;
+
+    }
+
+    void OnGUI()
+    {
+        if (count == 1)
+        {
+            GUI.skin = skin;
+
+
+            GUI.Box(new Rect(0, 0, Screen.width, Screen.height), "Exit");
+            GUI.Label(new Rect(Screen.width * 1 / 4, Screen.height * 2 / 6, Screen.width * 2 / 4, Screen.height * 1 / 6), "Are you sure you want to exit the game?");
+            if (GUI.Button(new Rect(Screen.width / 4, Screen.height * 3 / 8, Screen.width / 2, Screen.height / 8), "Yes"))
+            {
+
+                Application.Quit();
+
+            }
+            if (GUI.Button(new Rect(Screen.width / 4, Screen.height * 4 / 8, Screen.width / 2, Screen.height / 8), "Keep Playing"))
+            {
+                count = 0;
+                Time.timeScale = 1;
+            }
+        }
+    }
+#endif
+
     void OnFirstTouch()
     {
-        //
         Vector3 pos;
-        if(Time.timeScale == 1)
+        if (Time.timeScale == 1)
         {
             pos = new Vector3(Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position).x, transform.position.y, transform.position.z);
             transform.position = pos;
