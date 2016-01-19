@@ -9,9 +9,9 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
-  productName: EscapeFromEarth
-  defaultCursor: {fileID: 0}
+  companyName: Rayo
+  productName: You Will Not Survive!
+  defaultCursor: {fileID: 2800000, guid: ff2a6a8dae410d545a3bf62cc79f5826, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_ShowUnitySplashScreen: 1
   m_VirtualRealitySplashScreen: {fileID: 0}
@@ -89,15 +89,15 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleIdentifier: com.DefaultCompany.EscapeFromEarth
-  bundleVersion: 1.0
+  bundleIdentifier: com.Rayo.YouWillNotSurvive
+  bundleVersion: 2
   preloadedAssets: []
   metroEnableIndependentInputSource: 0
   metroEnableLowLatencyPresentationAPI: 0
   xboxOneDisableKinectGpuReservation: 0
   virtualRealitySupported: 0
   productGUID: 757c3a8c9faadd540b9e5748d335e16d
-  AndroidBundleVersionCode: 1
+  AndroidBundleVersionCode: 2
   AndroidMinSdkVersion: 10
   AndroidPreferredInstallLocation: 1
   aotOptions: 
@@ -158,8 +158,8 @@ PlayerSettings:
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: 
-  AndroidKeyaliasName: 
+  AndroidKeystoreName: C:/Users/Raymond/Dropbox/EscapeFromEarth/YouWillNotSurvive.keystore
+  AndroidKeyaliasName: youwillnotsurvive
   AndroidTVCompatibility: 1
   AndroidIsGame: 1
   androidEnableBanner: 1
@@ -173,7 +173,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 014d6ff07ea1a584e92c8c535154bcec, type: 3}
+      m_Icon: {fileID: 2800000, guid: ff2a6a8dae410d545a3bf62cc79f5826, type: 3}
       m_Width: 128
       m_Height: 128
   m_BuildTargetBatching: []

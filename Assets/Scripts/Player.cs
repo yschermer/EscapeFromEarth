@@ -4,42 +4,35 @@ using System.Collections.Generic;
 using System.Linq;
 
 
-public class Player : MonoBehaviour
+public class Player : TouchSprite
 {
     private float cameraLimitRight = 3.5f;
     private float cameraLimitLeft = -3.5f;
+    private bool flag = false;
+    public float speed = 0.02f;
 
-    private Vector2 fingerStart;
-    private Vector2 fingerEnd;
-
-    public enum Movement
-    {
-        Left,
-        Right
-    }
+    float distance = 0.15f;
 
     void Start()
     {
-        if (Application.platform == RuntimePlatform.Android)
-        {
-            cameraLimitRight = 1.5f;
-            cameraLimitLeft = -1.5f;
-        }
-        
-
         // gameObject
         float x = 0;
         float y = -2;
         float z = 0;
         this.gameObject.transform.position = new Vector3(x, y, z);
     }
-    public List<Movement> movements = new List<Movement>();
-
 
     // Update is called once per frame
     void Update()
     {
-        float distance = 0.15f;
+        if (Time.timeScale == 0)
+        {
+            distance = 0;
+        }
+        else
+        {
+            distance = 0.15f;
+        }
 
         // Jump keyboard
         if (Input.GetKey("left"))
@@ -56,97 +49,21 @@ public class Player : MonoBehaviour
                 this.gameObject.transform.position = new Vector2((this.gameObject.transform.position.x + distance), this.gameObject.transform.position.y);
             }
         }
+        TouchInput(GetComponent<BoxCollider2D>());
 
 
-        //Touch
-        foreach (Touch touch in Input.touches)
+    }
+
+    void OnFirstTouch()
+    {
+        Vector3 pos;
+        if(Time.timeScale == 1)
         {
-
-            if (touch.phase == TouchPhase.Began)
-            {
-                fingerStart = touch.position;
-                fingerEnd = touch.position;
-            }
-
-            if (touch.phase == TouchPhase.Moved)
-            {
-                fingerEnd = touch.position;
-
-                //There is more movement on the X axis than the Y axis
-                if (Mathf.Abs(fingerStart.x - fingerEnd.x) > Mathf.Abs(fingerStart.y - fingerEnd.y))
-                {
-
-                    //Right Swipe
-                    if ((fingerEnd.x - fingerStart.x) > 0)
-                    {
-                        if (this.gameObject.transform.position.x < cameraLimitRight)
-                        {
-                            this.gameObject.transform.position = new Vector2((this.gameObject.transform.position.x + distance), this.gameObject.transform.position.y);
-                        }
-                        movements.Add(Movement.Right);
-                    }
-                    else
-                    {
-                        //Left Swipe
-                        if (this.gameObject.transform.position.x > cameraLimitLeft)
-                        {
-                            this.gameObject.transform.position = new Vector2((this.gameObject.transform.position.x - distance), this.gameObject.transform.position.y);
-                        }
-                        movements.Add(Movement.Left);
-                    }
-                }
-
-                ////More movement along the Y axis than the X axis
-                //else {
-                //    //Upward Swipe
-                //    if ((fingerEnd.y - fingerStart.y) > 0)
-                //        movements.Add(Movement.Up);
-                //    //Downward Swipe
-                //    else
-                //        movements.Add(Movement.Down);
-                //}
-
-
-                //After the checks are performed, set the fingerStart & fingerEnd to be the same
-                fingerStart = touch.position;
-
-                //Now let's check if the Movement pattern is what we want
-                //In this example, I'm checking whether the pattern is Left, then Right, then Left again
-                Debug.Log(CheckForPatternMove(0, 3, new List<Movement>() { Movement.Left, Movement.Right, Movement.Left }));
-            }
-
-
-            if (touch.phase == TouchPhase.Ended)
-            {
-                fingerStart = Vector2.zero;
-                fingerEnd = Vector2.zero;
-                movements.Clear();
-            }
+            pos = new Vector3(Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position).x, transform.position.y, transform.position.z);
+            transform.position = pos;
         }
     }
-    private bool CheckForPatternMove(int startIndex, int lengthOfPattern, List<Movement> movementToCheck)
-    {
 
-        //If the currently stored movements are fewer than the length of the pattern to be detected
-        //it can never match the pattern. So, let's get out
-        if (lengthOfPattern > movements.Count)
-            return false;
-
-        //In case the start index for the check plus the length of the pattern
-        //exceeds the movement list's count, it'll throw an exception, so lets get out
-        if (startIndex + lengthOfPattern > movements.Count)
-            return false;
-
-        //Populate a temporary list with the respective elements
-        //from the movement list
-        List<Movement> tMovements = new List<Movement>();
-        for (int i = startIndex; i < startIndex + lengthOfPattern; i++)
-            tMovements.Add(movements[i]);
-
-        //Now check whether the sequence of movements is the same as the pattern you want to check for
-        //The SequenceEqual method is in the System.Linq namespace
-        return tMovements.SequenceEqual(movementToCheck);
-    }
     // Die by collision
     void OnCollisionEnter2D(Collision2D other)
     {
@@ -158,6 +75,19 @@ public class Player : MonoBehaviour
 
     void Die()
     {
-        Application.LoadLevel("Play");
+        Time.timeScale = 0;
+        Canvas[] menus = FindObjectsOfType<Canvas>();
+
+        foreach (Canvas menu in menus)
+        {
+            if (menu.name == "Menu")
+            {
+                menu.enabled = true;
+            }
+            else if (menu.name == "Score")
+            {
+                menu.enabled = false;
+            }
+        }
     }
 }
