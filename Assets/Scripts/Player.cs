@@ -15,6 +15,18 @@ public class Player : TouchSprite
 
     void Start()
     {
+
+#if UNITY_ANDROID
+
+        cameraLimitRight = 1.4f;
+        cameraLimitLeft = -1.4f;
+#elif UNITY_IPHONE
+        
+        cameraLimitRight = 1.4f;
+        cameraLimitLeft = -1.4f;
+
+#endif
+
         // gameObject
         float x = 0;
         float y = -2;
