@@ -1,17 +1,17 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &190102
+--- !u!1 &163416
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 496718}
-  - 212: {fileID: 21268084}
-  - 50: {fileID: 5043940}
-  - 114: {fileID: 11467490}
-  - 60: {fileID: 6032290}
+  - 4: {fileID: 479334}
+  - 212: {fileID: 21208466}
+  - 50: {fileID: 5065688}
+  - 114: {fileID: 11465882}
+  - 60: {fileID: 6010134}
   m_Layer: 0
   m_Name: Asteroid3
   m_TagString: Obstacle
@@ -19,25 +19,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &496718
+--- !u!4 &479334
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 190102}
+  m_GameObject: {fileID: 163416}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -1.79, y: -1.17, z: 0}
+  m_LocalScale: {x: 0.77063245, y: 0.77063245, z: 0.77063245}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!50 &5043940
+--- !u!50 &5065688
 Rigidbody2D:
   serializedVersion: 2
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 190102}
+  m_GameObject: {fileID: 163416}
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
@@ -48,12 +48,12 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &6032290
+--- !u!60 &6010134
 PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 190102}
+  m_GameObject: {fileID: 163416}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -92,23 +92,23 @@ PolygonCollider2D:
       - {x: 0.46375299, y: -0.29988974}
       - {x: 0.5041226, y: -0.2860818}
       - {x: 0.5522186, y: -0.25608176}
---- !u!114 &11467490
+--- !u!114 &11465882
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 190102}
+  m_GameObject: {fileID: 163416}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8589182d120497b47a47fa752a5af63e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!212 &21268084
+--- !u!212 &21208466
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 190102}
+  m_GameObject: {fileID: 163416}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -142,5 +142,5 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 190102}
+  m_RootGameObject: {fileID: 163416}
   m_IsPrefabParent: 1
