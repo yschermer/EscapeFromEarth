@@ -96,7 +96,9 @@
     <Compile Include="Assets\GoogleMobileAds\Platforms\iOS\MonoPInvokeCallbackAttribute.cs" />
     <Compile Include="Assets\Scripts\Animate.cs" />
     <Compile Include="Assets\Scripts\Asteroid.cs" />
+    <Compile Include="Assets\Scripts\DisplayHighScores.cs" />
     <Compile Include="Assets\Scripts\Generate.cs" />
+    <Compile Include="Assets\Scripts\HighScores.cs" />
     <Compile Include="Assets\Scripts\Initialization.cs" />
     <Compile Include="Assets\Scripts\Menu.cs" />
     <Compile Include="Assets\Scripts\Meteor.cs" />

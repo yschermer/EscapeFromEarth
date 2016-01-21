@@ -90,14 +90,14 @@ PlayerSettings:
     16:9: 1
     Others: 1
   bundleIdentifier: com.Rayo.YouWillNotSurvive
-  bundleVersion: 2
+  bundleVersion: 2.6
   preloadedAssets: []
   metroEnableIndependentInputSource: 0
   metroEnableLowLatencyPresentationAPI: 0
   xboxOneDisableKinectGpuReservation: 0
   virtualRealitySupported: 0
   productGUID: 757c3a8c9faadd540b9e5748d335e16d
-  AndroidBundleVersionCode: 2
+  AndroidBundleVersionCode: 4
   AndroidMinSdkVersion: 10
   AndroidPreferredInstallLocation: 1
   aotOptions: 
