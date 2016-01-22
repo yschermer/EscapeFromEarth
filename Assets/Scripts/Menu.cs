@@ -8,7 +8,7 @@ public class Menu : MonoBehaviour {
     public Button play;
     public Button exit;
     public Button home;
-    public Button leaderboard;
+    public Button highscores;
     public Text distanceText;
     public Text distance;
     public Text timeText;
@@ -19,16 +19,18 @@ public class Menu : MonoBehaviour {
     void Start () {
         menu = menu.GetComponent<Canvas>();
         play = play.GetComponent<Button>();
-        leaderboard = leaderboard.GetComponent<Button>();
+        highscores = highscores.GetComponent<Button>();
 
         if(Application.loadedLevelName == "Play")
         {
             menu.enabled = false;
             home = home.GetComponent<Button>();
+            highscores = highscores.GetComponent<Button>();
             distanceText = distanceText.GetComponent<Text>();
             distance = distance.GetComponent<Text>();
             timeText = timeText.GetComponent<Text>();
             time = time.GetComponent<Text>();
+            
         
         }
         else
@@ -64,5 +66,9 @@ public class Menu : MonoBehaviour {
     {
         
         Application.LoadLevel("Menu");
+    }
+    public void ToHighscores()
+    {
+        Application.LoadLevel("Highscores");
     }
 }

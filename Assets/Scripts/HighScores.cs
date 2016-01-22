@@ -29,6 +29,7 @@ public class HighScores : MonoBehaviour {
 
     public static void AddNewHighscore(string username, int score)
     {
+        //print (username + score);
         instance.StartCoroutine(instance.UploadNewHighscore(username, score));
  
     }
