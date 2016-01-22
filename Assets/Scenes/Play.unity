@@ -1880,6 +1880,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.02
   pauseMode: 0
+  dead: 0
 --- !u!60 &1974239569
 PolygonCollider2D:
   m_ObjectHideFlags: 0

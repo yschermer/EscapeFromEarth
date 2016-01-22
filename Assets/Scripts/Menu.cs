@@ -48,6 +48,9 @@ public class Menu : MonoBehaviour {
             distance.text = distanceText.text;
             time.text = timeText.text;
         }
+
+
+        
     }
 
     public void ExitGame()

@@ -13,7 +13,9 @@ public class Player : TouchSprite
     public float speed = 0.02f;
     public bool pauseMode = false;
     float distanceToMove = 0.15f;
+    public bool dead = false;
     int count = 0;
+
     GUISkin skin;
 
     void Start()
@@ -36,6 +38,8 @@ public class Player : TouchSprite
     // Update is called once per frame
     void Update()
     {
+        
+
         if (Time.timeScale == 0)
         {
             distanceToMove = 0;
@@ -61,6 +65,8 @@ public class Player : TouchSprite
             }
         }
 
+       
+
         //Touch
         TouchInput(GetComponent<BoxCollider2D>());
 
@@ -72,6 +78,44 @@ public class Player : TouchSprite
             count = 1;
         }
 #endif
+        Canvas[] menus = FindObjectsOfType<Canvas>();
+
+        foreach (Canvas menu in menus)
+        {
+            if (menu.name == "Score")
+            {
+                //save and set scores https://www.youtube.com/watch?v=1ZGDBuJjFbY
+                if (PlayerPrefs.GetString("User") == null)
+                {
+                    //Create new user
+                    PlayerPrefs.SetString("User", popup);
+                }
+                else
+                {
+                    //Use exist user
+                    string username = PlayerPrefs.GetString("User");
+                }
+
+                //save and set personal scores
+                if (PlayerPrefs.GetInt("personalScore").ToString() == null)
+                {
+                    //Save personal score
+
+                }
+                else
+                {
+                    //Read exist personal score
+
+                }
+
+
+                int score = Score.distance;
+
+                //Save score and upload to server
+                print("Score: " + score);
+                HighScores.AddNewHighscore(username, score);
+            }
+        }
     }
 
 #if UNITY_ANDROID
@@ -129,10 +173,8 @@ public class Player : TouchSprite
     {
         Time.timeScale = 0;
         Canvas[] menus = FindObjectsOfType<Canvas>();
-        string username = "Ray";
-        int score = Score.distance;
-
-
+       
+        
         foreach (Canvas menu in menus)
         {
             if (menu.name == "Menu")
@@ -145,6 +187,8 @@ public class Player : TouchSprite
             }
         }
         
-        HighScores.AddNewHighscore(username, score);
+        
     }
+
+   
 }

@@ -31,7 +31,7 @@ public class HighScores : MonoBehaviour {
     public static void AddNewHighscore(string username, int score)
     {
         print ("Instance!: " + instance);
-        //Probleem: instance is empty...
+     
        instance.StartCoroutine(instance.UploadNewHighscore(username, score));
  
     }
