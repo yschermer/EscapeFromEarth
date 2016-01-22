@@ -19,13 +19,14 @@ public class Menu : MonoBehaviour {
     void Start () {
         menu = menu.GetComponent<Canvas>();
         play = play.GetComponent<Button>();
-        highscores = highscores.GetComponent<Button>();
+        //highscores = highscores.GetComponent<Button>();
 
-        if(Application.loadedLevelName == "Play")
+
+        if (Application.loadedLevelName == "Play")
         {
             menu.enabled = false;
             home = home.GetComponent<Button>();
-            highscores = highscores.GetComponent<Button>();
+            
             distanceText = distanceText.GetComponent<Text>();
             distance = distance.GetComponent<Text>();
             timeText = timeText.GetComponent<Text>();

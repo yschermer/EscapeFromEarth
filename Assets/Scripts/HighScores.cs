@@ -16,6 +16,7 @@ public class HighScores : MonoBehaviour {
    
     void Awake()
     {
+        instance = this;
         highscoreDisplay = GetComponent<DisplayHighScores>();
         ////Upload Highscores
         //AddNewHighscore("Raymond", 50);
@@ -24,12 +25,12 @@ public class HighScores : MonoBehaviour {
 
         ////Download alle highscores
         //DownloadHighscores();
-        instance = this;
+        
     }
 
     public static void AddNewHighscore(string username, int score)
     {
-        //print (username + score);
+        print (username + score);
         instance.StartCoroutine(instance.UploadNewHighscore(username, score));
  
     }

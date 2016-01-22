@@ -525,7 +525,7 @@ MonoBehaviour:
   play: {fileID: 666248732}
   exit: {fileID: 0}
   home: {fileID: 27174034}
-  leaderboard: {fileID: 801213459}
+  highscores: {fileID: 801213459}
   distanceText: {fileID: 1091271204}
   distance: {fileID: 1905012573}
   timeText: {fileID: 1641726255}

@@ -130,7 +130,8 @@ public class Player : TouchSprite
         Time.timeScale = 0;
         Canvas[] menus = FindObjectsOfType<Canvas>();
         string username = "Ray";
-        
+        int score = Score.distance;
+
         foreach (Canvas menu in menus)
         {
             if (menu.name == "Menu")
@@ -139,9 +140,10 @@ public class Player : TouchSprite
             }
             else if (menu.name == "Score")
             {
-                menu.enabled = false;
+                menu.enabled = false;HighScores.AddNewHighscore(username, score);
             }
         }
-        HighScores.AddNewHighscore(username, Score.distance);
+   
+        
     }
 }
