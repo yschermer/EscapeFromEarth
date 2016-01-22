@@ -8,6 +8,7 @@ public class Menu : MonoBehaviour {
     public Button play;
     public Button exit;
     public Button home;
+    public Button leaderboard;
     public Text distanceText;
     public Text distance;
     public Text timeText;
@@ -18,6 +19,7 @@ public class Menu : MonoBehaviour {
     void Start () {
         menu = menu.GetComponent<Canvas>();
         play = play.GetComponent<Button>();
+        leaderboard = leaderboard.GetComponent<Button>();
 
         if(Application.loadedLevelName == "Play")
         {

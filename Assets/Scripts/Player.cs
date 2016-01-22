@@ -129,7 +129,7 @@ public class Player : TouchSprite
     {
         Time.timeScale = 0;
         Canvas[] menus = FindObjectsOfType<Canvas>();
-
+        string username = "Ray";
         HighScores.AddNewHighscore(username, Score.distance);
 
         foreach (Canvas menu in menus)
