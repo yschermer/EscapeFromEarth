@@ -12,7 +12,7 @@ public class Player : TouchSprite
     private bool flag = false;
     public float speed = 0.02f;
     public bool pauseMode = false;
-    float distance = 0.15f;
+    float distanceToMove = 0.15f;
     int count = 0;
     GUISkin skin;
 
@@ -38,11 +38,11 @@ public class Player : TouchSprite
     {
         if (Time.timeScale == 0)
         {
-            distance = 0;
+            distanceToMove = 0;
         }
         else
         {
-            distance = 0.15f;
+            distanceToMove = 0.15f;
         }
 
         // Jump keyboard
@@ -50,14 +50,14 @@ public class Player : TouchSprite
         {
             if (this.gameObject.transform.position.x > cameraLimitLeft)
             {
-                this.gameObject.transform.position = new Vector2((this.gameObject.transform.position.x - distance), this.gameObject.transform.position.y);
+                this.gameObject.transform.position = new Vector2((this.gameObject.transform.position.x - distanceToMove), this.gameObject.transform.position.y);
             }
         }
         else if (Input.GetKey("right"))
         {
             if (this.gameObject.transform.position.x < cameraLimitRight)
             {
-                this.gameObject.transform.position = new Vector2((this.gameObject.transform.position.x + distance), this.gameObject.transform.position.y);
+                this.gameObject.transform.position = new Vector2((this.gameObject.transform.position.x + distanceToMove), this.gameObject.transform.position.y);
             }
         }
 
@@ -129,10 +129,8 @@ public class Player : TouchSprite
     {
         Time.timeScale = 0;
         Canvas[] menus = FindObjectsOfType<Canvas>();
-        
-     
-        
 
+        HighScores.AddNewHighscore(username, Score.distance);
 
         foreach (Canvas menu in menus)
         {
