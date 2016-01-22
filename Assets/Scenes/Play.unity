@@ -1634,7 +1634,7 @@ GameObject:
   - 114: {fileID: 1547472983}
   - 114: {fileID: 1547472982}
   m_Layer: 5
-  m_Name: Highscores
+  m_Name: DisplayHighScore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1657,7 +1657,7 @@ RectTransform:
   m_RootOrder: 8
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -71.6}
+  m_AnchoredPosition: {x: 0, y: -100.1}
   m_SizeDelta: {x: 209.6, y: 113.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1547472982
@@ -1668,9 +1668,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1547472980}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0f9b6382434e7d408b308c1a784ef43, type: 3}
+  m_Script: {fileID: 11500000, guid: a4ee2f09908ed3345896aa044f896636, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  highscoreFields:
+  - {fileID: 422291220}
+  - {fileID: 1221780331}
+  - {fileID: 728070298}
 --- !u!114 &1547472983
 MonoBehaviour:
   m_ObjectHideFlags: 0

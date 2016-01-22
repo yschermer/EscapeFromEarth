@@ -32,7 +32,15 @@ public class Score : MonoBehaviour {
         if(Time.timeScale == 0)
         {
             timer.Stop();
+            
         }
+
+        //FIX DIT! Bijna af!////////////////////////////////////////////////
+        if (Player)
+        {
+            HighScores.AddNewHighscore(username, distance);
+        }
+        //////////////////////////////////////////////////////////////////////////
         timeText.text = string.Format("{0} m {1} s", timer.Elapsed.Minutes, timer.Elapsed.Seconds);
         distanceText.text = string.Format("{0} km", distance);
 	}

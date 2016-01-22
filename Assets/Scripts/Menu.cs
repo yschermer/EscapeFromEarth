@@ -13,6 +13,7 @@ public class Menu : MonoBehaviour {
     public Text timeText;
     public Text time;
 
+    
     // Use this for initialization
     void Start () {
         menu = menu.GetComponent<Canvas>();
@@ -26,6 +27,7 @@ public class Menu : MonoBehaviour {
             distance = distance.GetComponent<Text>();
             timeText = timeText.GetComponent<Text>();
             time = time.GetComponent<Text>();
+        
         }
         else
         {
@@ -45,6 +47,7 @@ public class Menu : MonoBehaviour {
 
     public void ExitGame()
     {
+        
         Application.Quit();
     }
 
@@ -57,6 +60,7 @@ public class Menu : MonoBehaviour {
 
     public void ReturnToHome()
     {
+        
         Application.LoadLevel("Menu");
     }
 }

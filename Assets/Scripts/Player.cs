@@ -129,6 +129,10 @@ public class Player : TouchSprite
     {
         Time.timeScale = 0;
         Canvas[] menus = FindObjectsOfType<Canvas>();
+        
+     
+        
+
 
         foreach (Canvas menu in menus)
         {
