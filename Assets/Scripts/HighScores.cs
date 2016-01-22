@@ -9,14 +9,14 @@ public class HighScores : MonoBehaviour {
     const string publicCode = "56a1488a6e51b6185cf899fa";
     const string webURL = "http://dreamlo.com/lb/";
     
-
-    DisplayHighScores highscoreDisplay;
     public Highscore[] highscoresList;
     static HighScores instance;
-   
+    DisplayHighScores highscoreDisplay;
+
     void Awake()
     {
         instance = this;
+        
         highscoreDisplay = GetComponent<DisplayHighScores>();
         ////Upload Highscores
         //AddNewHighscore("Raymond", 50);
@@ -30,8 +30,9 @@ public class HighScores : MonoBehaviour {
 
     public static void AddNewHighscore(string username, int score)
     {
-        print (username + score);
-        instance.StartCoroutine(instance.UploadNewHighscore(username, score));
+        print ("Instance!: " + instance);
+        //Probleem: instance is empty...
+       instance.StartCoroutine(instance.UploadNewHighscore(username, score));
  
     }
 

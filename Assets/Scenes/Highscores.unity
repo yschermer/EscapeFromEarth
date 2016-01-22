@@ -582,7 +582,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 463125946}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b0151c33fcd8e3f4cb40254f859b3d33, type: 3}
   m_Name: 
@@ -591,7 +591,7 @@ MonoBehaviour:
   play: {fileID: 0}
   exit: {fileID: 0}
   home: {fileID: 27174034}
-  leaderboard: {fileID: 0}
+  highscores: {fileID: 0}
   distanceText: {fileID: 0}
   distance: {fileID: 0}
   timeText: {fileID: 0}
@@ -1437,7 +1437,7 @@ GameObject:
   - 114: {fileID: 1547472983}
   - 114: {fileID: 1547472982}
   m_Layer: 5
-  m_Name: DisplayHighScore
+  m_Name: HighScores
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
