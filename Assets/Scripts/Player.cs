@@ -15,11 +15,15 @@ public class Player : TouchSprite
     float distanceToMove = 0.15f;
     public bool dead = false;
     int count = 0;
+    
+    string username = "";
 
     GUISkin skin;
 
     void Start()
     {
+        
+
 #if UNITY_ANDROID
         cameraLimitRight = 1.4f;
         cameraLimitLeft = -1.4f;
@@ -44,8 +48,23 @@ public class Player : TouchSprite
         {
             distanceToMove = 0;
 
-            int score = Score.distance;
 
+            username = GetUserName.textField.ToString();
+
+            if (PlayerPrefs.GetString("User") == null)
+            {
+                //Application.LoadLevel = "UserInput";
+                print("username" + username);
+                //Create new user
+                PlayerPrefs.SetString("User", username);
+            }
+            else
+            {
+                //Use exist user
+                string username = PlayerPrefs.GetString("User");
+            }
+
+            int score = Score.distance;
             //Save score and upload to server
             print("Score: " + score);
             HighScores.AddNewHighscore(username, score);
@@ -91,17 +110,9 @@ public class Player : TouchSprite
         {
             if (menu.name == "Score")
             {
+                print("het werkt");
                 //save and set scores https://www.youtube.com/watch?v=1ZGDBuJjFbY
-                if (PlayerPrefs.GetString("User") == null)
-                {
-                    //Create new user
-                    PlayerPrefs.SetString("User", );
-                }
-                else
-                {
-                    //Use exist user
-                    string username = PlayerPrefs.GetString("User");
-                }
+                
 
                 //save and set personal scores
                 if (PlayerPrefs.GetInt("personalScore").ToString() == null)
