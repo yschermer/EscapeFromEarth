@@ -15,9 +15,8 @@ public class Player : TouchSprite
     float distanceToMove = 0.15f;
     public bool dead = false;
     int count = 0;
-    
-    string username = "";
-
+    string username = "RayYoshio";
+  
     GUISkin skin;
 
     void Start()
@@ -42,32 +41,14 @@ public class Player : TouchSprite
     // Update is called once per frame
     void Update()
     {
-        
+        print("playerpref: " + PlayerPrefs.GetString("User"));
 
         if (Time.timeScale == 0)
         {
             distanceToMove = 0;
-
-
-            username = GetUserName.textField.ToString();
-
-            if (PlayerPrefs.GetString("User") == null)
-            {
-                //Application.LoadLevel = "UserInput";
-                print("username" + username);
-                //Create new user
-                PlayerPrefs.SetString("User", username);
-            }
-            else
-            {
-                //Use exist user
-                string username = PlayerPrefs.GetString("User");
-            }
-
-            int score = Score.distance;
-            //Save score and upload to server
-            print("Score: " + score);
-            HighScores.AddNewHighscore(username, score);
+            
+            //save and upload scores
+            SaveUserName();
         }
         else
         {
@@ -110,7 +91,7 @@ public class Player : TouchSprite
         {
             if (menu.name == "Score")
             {
-                print("het werkt");
+       
                 //save and set scores https://www.youtube.com/watch?v=1ZGDBuJjFbY
                 
 
@@ -128,7 +109,40 @@ public class Player : TouchSprite
             }
         }
     }
+    public void SaveUserName()
+    {
+        
+        if (PlayerPrefs.HasKey("User"))
+        {
+            //PlayerPrefs.DeleteKey("User");
+            //Use exist user
+            string oldUsername = PlayerPrefs.GetString("User", "ray");
+            int score = Score.distance;
+            HighScores.AddNewHighscore(oldUsername, score);
+        }
+        else
+        {
+            //Create new user
+            Application.LoadLevel("UserInput");
 
+            if (GetUserName.submitted)
+            {
+                print("teasdkjfhdakadsadjadkj");
+                 // username = GetUserName.textField.ToString();
+                username = GetUserName.newUsername;
+                PlayerPrefs.SetString("User", "ray");
+
+                int score = Score.distance;
+                
+                HighScores.AddNewHighscore(PlayerPrefs.GetString("User", "ray"), score);
+                //print("Playerpref" + score +" vvvvv " + PlayerPrefs.GetString("User", username));
+            }
+
+           
+        }
+    }
+
+ 
 #if UNITY_ANDROID
     void OnApplicationPause()
     {

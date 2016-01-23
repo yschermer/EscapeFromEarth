@@ -425,7 +425,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 957988416}
-        m_MethodName: ExitGame
+        m_MethodName: ReturnToHome
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -740,7 +740,7 @@ MonoBehaviour:
   play: {fileID: 0}
   exit: {fileID: 461743875}
   home: {fileID: 0}
-  highscores: {fileID: 1293321091}
+  highscores: {fileID: 0}
   distanceText: {fileID: 0}
   distance: {fileID: 0}
   timeText: {fileID: 0}
@@ -756,6 +756,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db087938c49003742b23763c644eeea4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textField: {fileID: 326289633}
 --- !u!1 &1293321090
 GameObject:
   m_ObjectHideFlags: 0
@@ -813,8 +814,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 957988416}
-        m_MethodName: StartGame
+      - m_Target: {fileID: 957988417}
+        m_MethodName: Submit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

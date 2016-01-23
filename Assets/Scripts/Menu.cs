@@ -75,4 +75,5 @@ public class Menu : MonoBehaviour {
     {
         Application.LoadLevel("Highscores");
     }
+
 }
