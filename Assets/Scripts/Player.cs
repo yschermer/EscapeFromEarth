@@ -43,6 +43,12 @@ public class Player : TouchSprite
         if (Time.timeScale == 0)
         {
             distanceToMove = 0;
+
+            int score = Score.distance;
+
+            //Save score and upload to server
+            print("Score: " + score);
+            HighScores.AddNewHighscore(username, score);
         }
         else
         {
@@ -71,13 +77,14 @@ public class Player : TouchSprite
         TouchInput(GetComponent<BoxCollider2D>());
 
         //Back button on phones function
-#if UNITY_ANDROID
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Time.timeScale = 0;
-            count = 1;
-        }
-#endif
+        #if UNITY_ANDROID
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                Time.timeScale = 0;
+                count = 1;
+            }
+        #endif
+
         Canvas[] menus = FindObjectsOfType<Canvas>();
 
         foreach (Canvas menu in menus)
@@ -88,7 +95,7 @@ public class Player : TouchSprite
                 if (PlayerPrefs.GetString("User") == null)
                 {
                     //Create new user
-                    PlayerPrefs.SetString("User", popup);
+                    PlayerPrefs.SetString("User", );
                 }
                 else
                 {
@@ -107,13 +114,6 @@ public class Player : TouchSprite
                     //Read exist personal score
 
                 }
-
-
-                int score = Score.distance;
-
-                //Save score and upload to server
-                print("Score: " + score);
-                HighScores.AddNewHighscore(username, score);
             }
         }
     }
@@ -171,6 +171,7 @@ public class Player : TouchSprite
 
     void Die()
     {
+
         Time.timeScale = 0;
         Canvas[] menus = FindObjectsOfType<Canvas>();
        

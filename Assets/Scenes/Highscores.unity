@@ -1434,8 +1434,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 224: {fileID: 1547472981}
-  - 114: {fileID: 1547472983}
   - 114: {fileID: 1547472982}
+  - 114: {fileID: 1547472983}
   m_Layer: 5
   m_Name: HighScores
   m_TagString: Untagged
