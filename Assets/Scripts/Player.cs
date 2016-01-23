@@ -2,26 +2,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-
-
+using UnityEngine.UI;
 
 public class Player : TouchSprite
 {
     private float cameraLimitRight = 3.5f;
     private float cameraLimitLeft = -3.5f;
-    private bool flag = false;
     public float speed = 0.02f;
     public bool pauseMode = false;
     float distanceToMove = 0.15f;
     public bool dead = false;
     int count = 0;
-    string username = "RayYoshio";
-  
-    GUISkin skin;
 
     void Start()
     {
-        
 
 #if UNITY_ANDROID
         cameraLimitRight = 1.4f;
@@ -41,14 +35,9 @@ public class Player : TouchSprite
     // Update is called once per frame
     void Update()
     {
-        print("playerpref: " + PlayerPrefs.GetString("User"));
-
         if (Time.timeScale == 0)
         {
             distanceToMove = 0;
-            
-            //save and upload scores
-            SaveUserName();
         }
         else
         {
@@ -71,19 +60,19 @@ public class Player : TouchSprite
             }
         }
 
-       
+
 
         //Touch
         TouchInput(GetComponent<BoxCollider2D>());
 
         //Back button on phones function
-        #if UNITY_ANDROID
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                Time.timeScale = 0;
-                count = 1;
-            }
-        #endif
+#if UNITY_ANDROID
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Time.timeScale = 0;
+            count = 1;
+        }
+#endif
 
         Canvas[] menus = FindObjectsOfType<Canvas>();
 
@@ -91,9 +80,9 @@ public class Player : TouchSprite
         {
             if (menu.name == "Score")
             {
-       
+
                 //save and set scores https://www.youtube.com/watch?v=1ZGDBuJjFbY
-                
+
 
                 //save and set personal scores
                 if (PlayerPrefs.GetInt("personalScore").ToString() == null)
@@ -109,55 +98,18 @@ public class Player : TouchSprite
             }
         }
     }
-    public void SaveUserName()
-    {
-        
-        if (PlayerPrefs.HasKey("User"))
-        {
-            //PlayerPrefs.DeleteKey("User");
-            //Use exist user
-            string oldUsername = PlayerPrefs.GetString("User", "ray");
-            int score = Score.distance;
-            HighScores.AddNewHighscore(oldUsername, score);
-        }
-        else
-        {
-            //Create new user
-            Application.LoadLevel("UserInput");
 
-            if (GetUserName.submitted)
-            {
-                print("teasdkjfhdakadsadjadkj");
-                 // username = GetUserName.textField.ToString();
-                username = GetUserName.newUsername;
-                PlayerPrefs.SetString("User", "ray");
-
-                int score = Score.distance;
-                
-                HighScores.AddNewHighscore(PlayerPrefs.GetString("User", "ray"), score);
-                //print("Playerpref" + score +" vvvvv " + PlayerPrefs.GetString("User", username));
-            }
-
-           
-        }
-    }
-
- 
 #if UNITY_ANDROID
     void OnApplicationPause()
     {
         Time.timeScale = 0;
         count = 1;
-
     }
 
     void OnGUI()
     {
         if (count == 1)
         {
-            GUI.skin = skin;
-
-
             GUI.Box(new Rect(0, 0, Screen.width, Screen.height), "Exit");
             GUI.Label(new Rect(Screen.width * 1 / 4, Screen.height * 2 / 6, Screen.width * 2 / 4, Screen.height * 1 / 6), "Are you sure you want to exit the game?");
             if (GUI.Button(new Rect(Screen.width / 4, Screen.height * 3 / 8, Screen.width / 2, Screen.height / 8), "Yes"))
@@ -196,11 +148,11 @@ public class Player : TouchSprite
 
     void Die()
     {
-
         Time.timeScale = 0;
         Canvas[] menus = FindObjectsOfType<Canvas>();
-       
-        
+
+        UpdateHighscore();
+
         foreach (Canvas menu in menus)
         {
             if (menu.name == "Menu")
@@ -212,9 +164,13 @@ public class Player : TouchSprite
                 menu.enabled = false;
             }
         }
-        
-        
     }
 
-   
+    public void UpdateHighscore()
+    {
+        if (PlayerPrefs.HasKey("User"))
+        {
+            HighScores.AddNewHighscore(PlayerPrefs.GetString("User"), Score.distance);
+        }
+    }
 }

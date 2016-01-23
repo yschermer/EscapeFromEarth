@@ -3,12 +3,13 @@ using System.Collections;
 
 
 //https://www.youtube.com/watch?v=KZuqEyxYZCc
-public class HighScores : MonoBehaviour {
+public class HighScores : MonoBehaviour
+{
     //Weburl
     const string privateCode = "maWvVRdrSUqxf2bFWaIurwE2wnRfUK7EiWhLX6is_2RA";
     const string publicCode = "56a1488a6e51b6185cf899fa";
     const string webURL = "http://dreamlo.com/lb/";
-    
+
     public Highscore[] highscoresList;
     static HighScores instance;
     DisplayHighScores highscoreDisplay;
@@ -16,25 +17,17 @@ public class HighScores : MonoBehaviour {
     void Awake()
     {
         instance = this;
-        
-        highscoreDisplay = GetComponent<DisplayHighScores>();
-        ////Upload Highscores
-        //AddNewHighscore("Raymond", 50);
-        //AddNewHighscore("Ray", 40);
-        //AddNewHighscore("Raymond", 10);
 
-        ////Download alle highscores
-        //DownloadHighscores();
-        
+        highscoreDisplay = GetComponent<DisplayHighScores>();
     }
 
     public static void AddNewHighscore(string username, int score)
     {
-        print ("Instance!: " + instance);
-       
-   
-       instance.StartCoroutine(instance.UploadNewHighscore(username, score));
- 
+        if (!string.IsNullOrEmpty(username))
+        {
+            print("Instance!: " + username + score);
+            instance.StartCoroutine(instance.UploadNewHighscore(username, score));
+        }
     }
 
     IEnumerator UploadNewHighscore(string username, int score)
@@ -45,7 +38,7 @@ public class HighScores : MonoBehaviour {
         if (string.IsNullOrEmpty(www.error))
         {
             print("Upload Successful");
-            
+
             DownloadHighscores();
         }
         else {

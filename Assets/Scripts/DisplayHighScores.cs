@@ -15,7 +15,6 @@ public class DisplayHighScores : MonoBehaviour
             highscoreFields[i].text = i + 1 + ". Fetching...";
         }
 
-
         highscoresManager = GetComponent<HighScores>();
         StartCoroutine("RefreshHighscores");
     }

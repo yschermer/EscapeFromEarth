@@ -14,7 +14,7 @@ GameObject:
   - 114: {fileID: 11455454}
   - 95: {fileID: 9527472}
   m_Layer: 0
-  m_Name: Meteor
+  m_Name: meteor
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
