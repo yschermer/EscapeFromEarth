@@ -1,18 +1,18 @@
 Base path: C:/Program Files/Unity/Editor/Data
 Cmd: getPlatforms
 Cmd: preprocess
-  insize=644 outsize=254 ok=1
+  insize=601 outsize=240 ok=1
 Cmd: preprocess
-  insize=235 outsize=232 ok=1
+  insize=222 outsize=219 ok=1
 Cmd: preprocess
-  insize=242 outsize=239 ok=1
+  insize=230 outsize=227 ok=1
 Cmd: preprocess
-  insize=216 outsize=213 ok=1
+  insize=204 outsize=201 ok=1
 Cmd: preprocess
-  insize=658 outsize=1536 ok=1
+  insize=626 outsize=1523 ok=1
 Cmd: compileSnippet
   error: 2 plat 4 at (24): incorrect number of arguments to numeric-type constructor\nCompiling Vertex program with DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF
 Platform defines: UNITY_NO_SCREENSPACE_SHADOWS UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_TEXTURE_ALPHASPLIT_ALLOWED
-  api=4 type=0 insize=6926 outsize=0 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF pd=UNITY_NO_SCREENSPACE_SHADOWS UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_TEXTURE_ALPHASPLIT_ALLOWED ok=0
+  api=4 type=0 insize=6907 outsize=0 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF pd=UNITY_NO_SCREENSPACE_SHADOWS UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_TEXTURE_ALPHASPLIT_ALLOWED ok=0
 Cmd: preprocess
-  insize=261 outsize=258 ok=1
+  insize=248 outsize=245 ok=1
