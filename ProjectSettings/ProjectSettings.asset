@@ -90,15 +90,15 @@ PlayerSettings:
     16:9: 1
     Others: 1
   bundleIdentifier: com.Rayo.YouWillNotSurvive
-  bundleVersion: 2.6
+  bundleVersion: 2.7
   preloadedAssets: []
   metroEnableIndependentInputSource: 0
   metroEnableLowLatencyPresentationAPI: 0
   xboxOneDisableKinectGpuReservation: 0
   virtualRealitySupported: 0
   productGUID: 757c3a8c9faadd540b9e5748d335e16d
-  AndroidBundleVersionCode: 4
-  AndroidMinSdkVersion: 10
+  AndroidBundleVersionCode: 5
+  AndroidMinSdkVersion: 14
   AndroidPreferredInstallLocation: 1
   aotOptions: 
   apiCompatibilityLevel: 2
@@ -155,11 +155,11 @@ PlayerSettings:
   iOSLaunchScreeniPadSize: 100
   iOSLaunchScreeniPadCustomXibPath: 
   iOSDeviceRequirements: []
-  AndroidTargetDevice: 0
+  AndroidTargetDevice: 3
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
   AndroidKeystoreName: C:/Users/Raymond/Dropbox/EscapeFromEarth/YouWillNotSurvive.keystore
-  AndroidKeyaliasName: 
+  AndroidKeyaliasName: youwillnotsurvive
   AndroidTVCompatibility: 1
   AndroidIsGame: 1
   androidEnableBanner: 1

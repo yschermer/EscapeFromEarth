@@ -60,6 +60,7 @@
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
+<<<<<<< HEAD
     <Reference Include="Mono.Cecil">
       <HintPath>Library\UnityAssemblies\Mono.Cecil.dll</HintPath>
     </Reference>
@@ -69,6 +70,8 @@
     <Reference Include="UnityEditor.iOS.Extensions.Common">
       <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
     </Reference>
+=======
+>>>>>>> b17c0977f61e73997cc47d80c0cb05a294f9ead1
     <Reference Include="OSCsharp">
       <HintPath>Assets\TouchScript\Modules\TUIO\Libraries\OSCsharp.dll</HintPath>
     </Reference>
