@@ -6,30 +6,15 @@ using UnityEngine.UI;
 
 public class Player : TouchSprite
 {
-    private float cameraLimitRight = 3.5f;
-    private float cameraLimitLeft = -3.5f;
-    public float speed = 0.02f;
-    public bool pauseMode = false;
-    float distanceToMove = 0.15f;
-    public bool dead = false;
-    int count = 0;
+    public static float speed;
+    public static float x;
+    public static float y;
+    public static float z;
+    int count;
 
     void Start()
     {
-
-#if UNITY_ANDROID
-        cameraLimitRight = 1.4f;
-        cameraLimitLeft = -1.4f;
-#elif UNITY_IPHONE
-        cameraLimitRight = 1.4f;
-        cameraLimitLeft = -1.4f;
-#endif
-
-        // gameObject
-        float x = 0;
-        float y = -2;
-        float z = 0;
-        this.gameObject.transform.position = new Vector3(x, y, z);
+        gameObject.transform.position = new Vector3(x, y, z);
     }
 
     // Update is called once per frame
@@ -37,30 +22,28 @@ public class Player : TouchSprite
     {
         if (Time.timeScale == 0)
         {
-            distanceToMove = 0;
+            speed = 0;
         }
         else
         {
-            distanceToMove = 0.15f;
+            speed = 0.15f;
         }
 
         // Jump keyboard
         if (Input.GetKey("left"))
         {
-            if (this.gameObject.transform.position.x > cameraLimitLeft)
+            if (this.gameObject.transform.position.x > Initialization.minPositionX)
             {
-                this.gameObject.transform.position = new Vector2((this.gameObject.transform.position.x - distanceToMove), this.gameObject.transform.position.y);
+                this.gameObject.transform.position = new Vector2((this.gameObject.transform.position.x - speed), this.gameObject.transform.position.y);
             }
         }
         else if (Input.GetKey("right"))
         {
-            if (this.gameObject.transform.position.x < cameraLimitRight)
+            if (this.gameObject.transform.position.x < Initialization.maxPositionX)
             {
-                this.gameObject.transform.position = new Vector2((this.gameObject.transform.position.x + distanceToMove), this.gameObject.transform.position.y);
+                this.gameObject.transform.position = new Vector2((this.gameObject.transform.position.x + speed), this.gameObject.transform.position.y);
             }
         }
-
-
 
         //Touch
         TouchInput(GetComponent<BoxCollider2D>());

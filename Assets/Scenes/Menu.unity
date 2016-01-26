@@ -174,10 +174,10 @@ RectTransform:
   - {fileID: 776423754}
   m_Father: {fileID: 957988415}
   m_RootOrder: 1
-  m_AnchorMin: {x: 0.103793114, y: 0.16800001}
-  m_AnchorMax: {x: 0.8746897, y: 0.3085787}
-  m_AnchoredPosition: {x: 2.2499986, y: 4}
-  m_SizeDelta: {x: -4.5, y: -8}
+  m_AnchorMin: {x: 0.103793114, y: 0.24549055}
+  m_AnchorMax: {x: 0.8746897, y: 0.3413585}
+  m_AnchoredPosition: {x: 1.6606491, y: 0}
+  m_SizeDelta: {x: -0.32129, y: -0.0000038147}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &461743875
 MonoBehaviour:
@@ -323,7 +323,7 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 0
-    m_MaxSize: 80
+    m_MaxSize: 60
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -531,13 +531,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menu: {fileID: 957988414}
   play: {fileID: 2047942501}
-  exit: {fileID: 461743875}
   home: {fileID: 0}
-  highscores: {fileID: 0}
+  submitUsername: {fileID: 0}
   distanceText: {fileID: 0}
   distance: {fileID: 0}
   timeText: {fileID: 0}
   time: {fileID: 0}
+  username: {fileID: 0}
 --- !u!1 &1161734906
 GameObject:
   m_ObjectHideFlags: 0
@@ -597,7 +597,7 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 0
-    m_MaxSize: 80
+    m_MaxSize: 60
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -843,10 +843,10 @@ RectTransform:
   - {fileID: 1161734907}
   m_Father: {fileID: 957988415}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0.103793114, y: 0.34010658}
+  m_AnchorMin: {x: 0.103793114, y: 0.38228303}
   m_AnchorMax: {x: 0.8746897, y: 0.4805787}
-  m_AnchoredPosition: {x: 3, y: 6}
-  m_SizeDelta: {x: -3, y: -9}
+  m_AnchoredPosition: {x: 3.0000007, y: 0.75}
+  m_SizeDelta: {x: -3, y: 1.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2047942501
 MonoBehaviour:

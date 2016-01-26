@@ -25,7 +25,6 @@ public class HighScores : MonoBehaviour
     {
         if (!string.IsNullOrEmpty(username))
         {
-            print("Instance!: " + username + score);
             instance.StartCoroutine(instance.UploadNewHighscore(username, score));
         }
     }
@@ -37,8 +36,6 @@ public class HighScores : MonoBehaviour
 
         if (string.IsNullOrEmpty(www.error))
         {
-            print("Upload Successful");
-
             DownloadHighscores();
         }
         else {
@@ -77,7 +74,6 @@ public class HighScores : MonoBehaviour
             string username = entryInfo[0];
             int score = int.Parse(entryInfo[1]);
             highscoresList[i] = new Highscore(username, score);
-            print(highscoresList[i].username + ": " + highscoresList[i].score);
         }
     }
 

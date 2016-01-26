@@ -953,6 +953,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 675167335}
   - 114: {fileID: 675167336}
+  - 114: {fileID: 675167337}
   m_Layer: 0
   m_Name: Scripts
   m_TagString: Untagged
@@ -987,6 +988,17 @@ MonoBehaviour:
   asteroid2: {fileID: 119900, guid: adbadb7eafdebe047963860ae52dd375, type: 2}
   asteroid3: {fileID: 163416, guid: 7bd1db2a88dc7ea47afb5425517e89b8, type: 2}
   meteor: {fileID: 197866, guid: b3cd0f5b0b0fd234eaa7bb940995e5a7, type: 2}
+--- !u!114 &675167337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 675167334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48e711d07f1ebf849be85fa88f366c5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &790463178
 GameObject:
   m_ObjectHideFlags: 0
@@ -2365,9 +2377,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92512912263b8da4fab19b2d8814b718, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.02
-  pauseMode: 0
-  dead: 0
 --- !u!60 &1974239569
 PolygonCollider2D:
   m_ObjectHideFlags: 0
